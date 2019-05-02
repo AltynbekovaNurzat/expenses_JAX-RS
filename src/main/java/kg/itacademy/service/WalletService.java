@@ -18,7 +18,7 @@ public class WalletService {
     @GET
     @Produces({MediaType.APPLICATION_JSON,
             MediaType.APPLICATION_XML})
-    public List<Wallet> getCats_JSON(@HeaderParam("user-key") String userAgent,
+    public List<Wallet> getWals_JSON(@HeaderParam("user-key") String userAgent,
                                      @HeaderParam("password-key") String pwdAgent) {
         if(UserDao.auth(userAgent, pwdAgent)){
             return null;
@@ -44,7 +44,7 @@ public class WalletService {
     @POST
     @Produces({MediaType.APPLICATION_JSON,
             MediaType.APPLICATION_XML})
-    public Wallet addCat(Wallet Wallet,
+    public Wallet addWal(Wallet Wallet,
                          @HeaderParam("user-key") String userAgent,
                          @HeaderParam("password-key") String pwdAgent) {
         if(UserDao.auth(userAgent, pwdAgent)){
@@ -56,7 +56,7 @@ public class WalletService {
     @PUT
     @Produces({ MediaType.APPLICATION_JSON,
             MediaType.APPLICATION_XML })
-    public Wallet updateCat(Wallet Wallet,
+    public Wallet updateWal(Wallet Wallet,
                             @HeaderParam("user-key") String userAgent,
                             @HeaderParam("password-key") String pwdAgent) {
         if(UserDao.auth(userAgent, pwdAgent)){
@@ -69,7 +69,7 @@ public class WalletService {
     @Path("/{WalletId}")
     @Produces({ MediaType.APPLICATION_JSON,
             MediaType.APPLICATION_XML })
-    public void deleteCat(@PathParam("WalletId") Integer WalletId,
+    public void deleteWal(@PathParam("WalletId") Integer WalletId,
                           @HeaderParam("user-key") String userAgent,
                           @HeaderParam("password-key") String pwdAgent) {
 
